@@ -49,3 +49,44 @@ print(a)
 
 a[:0]=[-12,-1,0]
 print(a)
+
+
+# 리스트를 스택으로 사용하기
+stack = []
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print(stack)
+
+print(stack.pop())
+print(stack.pop())
+print(stack)
+
+# 리스트를 큐로 사용하기
+q = []
+q.append(100)
+q.append(200)
+q.append(300)
+
+print(q)
+
+print(q.pop(0))
+print(q.pop(0))
+
+print(q)
+
+# 리스트의 정렬
+l = [1, 5, 3, 9, 8, 4, 2]
+l.sort()
+print(l)
+
+l.sort(reverse=True)
+print(l)
+
+l = [10, 2, 22, 9, 8, 33, 4, 11]
+l.sort(key=str)
+print(l)
+
+l.sort(key=int)
+print(l)
