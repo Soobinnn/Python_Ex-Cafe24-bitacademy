@@ -92,8 +92,6 @@ def crawling_nene():
             #print(sidogu)
 
 
-
-
     # store
     table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gungu'])
     table.to_csv('__results__/nene.csv', encoding='UTF-8', mode='w', index=True)
