@@ -19,6 +19,7 @@ from django.urls import path
 import main.views as main_views
 import user.views as user_views
 import guestbook.views as guestbook_views
+import board.views as board_views
 
 urlpatterns = [
     # main
@@ -28,12 +29,29 @@ urlpatterns = [
     path('user/joinform', user_views.joinform),
     path('user/join', user_views.join),
     path('user/joinsuccess', user_views.joinsuccess),
+    path('user/api/checkemail', user_views.checkemail),
+
+    #로그인
+    path('user/loginform', user_views.loginform),
+    path('user/login', user_views.login),
+    path('user/logout', user_views.logout),
+
+    # 회원정보 수정
+    path('user/updateform', user_views.updateform),
+    path('user/update', user_views.update),
 
     # 방명록
     path('guestbook/', guestbook_views.index),
     path('guestbook/write', guestbook_views.write),
     path('guestbook/deleform/<int:no>', guestbook_views.deleform),
     path('guestbook/delete', guestbook_views.delete),
+
+    # 게시판
+    path('board/', board_views.list),
+    path('board/write', board_views.list),
+    path('board/view', board_views.list),
+    path('board/', board_views.list),
+
 
 
     path('admin/', admin.site.urls),

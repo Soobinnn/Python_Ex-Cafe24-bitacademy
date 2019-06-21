@@ -27,10 +27,7 @@ def deleform(request, no=0):
     return render(request, 'guestbook/deleteform.html', data)
 
 def delete(request):
-    guestbook = Guestbook();
-    guestbook.no = request.POST['no']
-    guestbook.password = request.POST['password']
-    print(guestbook.no)
-    check = Guestbook.objects.filter(no=guestbook.no).filter(password=guestbook.password)
+    check = Guestbook.objects.filter(no=request.POST['no']).filter(password=request.POST['password'])
     check.delete()
+
     return HttpResponseRedirect('/guestbook/')
