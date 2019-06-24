@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'guestbook/list.html', data)
 
 def write(request):
-    guestbook = Guestbook();
+    guestbook = Guestbook()
     guestbook.name = request.POST['name']
     guestbook.password = request.POST['password']
     guestbook.content = request.POST['content']
@@ -31,3 +31,7 @@ def delete(request):
     check.delete()
 
     return HttpResponseRedirect('/guestbook/')
+
+
+def view(request):
+    pass

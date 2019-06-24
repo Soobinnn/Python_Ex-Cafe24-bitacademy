@@ -48,9 +48,9 @@ urlpatterns = [
 
     # 게시판
     path('board/', board_views.list),
-    path('board/write', board_views.list),
-    path('board/view', board_views.list),
-    path('board/', board_views.list),
+    path('board/write', board_views.write),
+    path('board/view', board_views.view),
+    path('board/reply', board_views.reply),
 
 
 

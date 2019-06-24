@@ -37,8 +37,8 @@
 								{% comment 'forloop' %}
 								<td>{{ forloop.counter}}</td>
 								{% endcomment %}
-								<!--<td> {{guestbook.no}} </td>-->
-								<td>{{guestbook.name}} : {{ guestbook | length}}</td>
+								<td> {{guestbook.no}} </td>
+								<td>{{guestbook.name}} </td>
 								<td>{{guestbook.regdate | date:'Y-m-d H:i:s'}}</td>
 								<td><a href="/guestbook/deleform/{{guestbook.no}}">삭제</a></td>
 							</tr>

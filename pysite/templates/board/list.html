@@ -21,18 +21,37 @@
 						<th>&nbsp;</th>
 					</tr>
 					{% for board in board %}
-					<tr>
+							<tr>
 						<td>{{board.board_no}}</td>
-						<td><a href="">{{board.title}}</a></td>
-						<td>글쓴이</td>
+					 	{% if board.depth > 0 %}
+						<td style="text-align:left; padding-left:20px">
+							<img src='/assets/images/reply.png'>
+						</td>
+						{% endif %}
+						<td><a href="/board/view?no={{board.board_no}}">{{board.title}}</a></td>
+						<td>{{user.name}}</td>
 						<td>{{board.hit}}</td>
 						<td>{{board.reg_Date}}</td>
 						<td><a href="/board/delete/" class="del">삭제</a></td>
-					</tr>
 					{% endfor %}
 				</table>
+				<!-- pager 추가 -->
+				<div class="pager">
+					<ul>
+						<li><a href="">◀</a></li>
+						<li><a href="">1</a></li>
+						<li class="selected">2</li>
+						<li><a href="">3</a></li>
+						<li>4</li>
+						<li>5</li>
+						<li><a href="">▶</a></li>
+					</ul>
+				</div>
+				<!-- pager 추가 -->
 				<div class="bottom">
+					{% if request.session.authuser is not None %}
 					<a href="/board/write" id="new-book">글쓰기</a>
+					{% endif %}
 				</div>				
 			</div>
 {% endblock %}

@@ -10,9 +10,10 @@ class Board(models.Model):
     contents = models.TextField()  # 길이 제한 없는 문자열
     hit = models.IntegerField()
     reg_date = models.DateTimeField(auto_now=True)
-    group_no = models.IntegerField()
-    order_no = models.IntegerField()
-    depth = models.IntegerField()
-    # no = models.ForeignKey('User', on_delete=models.CASCADE)
+    group_no = models.IntegerField(default=0)
+    order_no = models.IntegerField(default=0)
+    depth = models.IntegerField(default=0)
+    no = models.ForeignKey(User, on_delete=models.CASCADE)
+
     def __str__(self):
-        return f'Board({self.board_no}, {self.title}, {self.contents}, {self.hit}, {self.reg_date}, {self.group_no}, {self.order_no}, {self.depth})'
+        return f'Board({self.board_no}, {self.title}, {self.contents}, {self.hit}, {self.reg_date}, {self.group_no}, {self.order_no}, {self.depth}, {self.no})'

@@ -49,7 +49,7 @@ def logout(request):
     return HttpResponseRedirect('/')
 
 def updateform(request):
-    user = User.objects.get(id=request.session['authuser']['id'])
+    user = User.objects.get(no=request.session['authuser']['no'])
     data = {
         'user': user
     }
@@ -57,7 +57,7 @@ def updateform(request):
     return render(request, 'user/updateform.html',data)
 
 def update(request):
-    user = User.objects.get(id=request.session['authuser']['id'])
+    user = User.objects.get(no=request.session['authuser']['no'])
     user.name = request.POST['name']
     user.gender = request.POST['gender']
     if request.POST['password'] is not '':
@@ -81,3 +81,4 @@ def checkemail(request):
     }
 
     return JsonResponse(result)
+
